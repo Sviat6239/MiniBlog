@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ post.title }}</title>
+</head>
+<body>
+    <h1>{{ post.title }}</h1>
+    <p>{{ post.content }}</p>
+    <p>Published on: {{ post.published_date }}</p>
+    <p>Author: {{ post.author.name }}</p>
+
+    <h2>Comments</h2>
+    <ul>
+        {% for comment in comments %}
+            <li>
+                <p>{{ comment.author_name }} said: {{ comment.text }}</p>
+                <p>Posted on: {{ comment.created_date }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
